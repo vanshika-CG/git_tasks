@@ -93,3 +93,94 @@ git merge feature-login
 git checkout will switch the branch and merge will merge the changes from feature-login to main branch
 ## Task 8: handling merge conflicts
 
+## Task 9: Renaming and deleting branches
+```
+git branch -m old-branch-name new-branch-name
+```
+it will rename the branch name
+```
+git branch-d feature-login
+```
+it will delete the branch 
+## Task 10: using git stash
+```
+echo "Temporary work" >> temp.md
+```
+create new file with the given content
+```
+git stash
+```
+temporarily saves uncommited changes in git so we can work on something else without losing your progress
+```
+git stash list
+```
+display the list of all stashes currently saved in git repository
+```
+git stash apply
+```
+this used to reapply the changes saved in a stash
+```
+git stash drop
+```
+it is used to delete specific stash entry
+# Task 11: Rewriting History with Interactive Rebase
+```
+echo "Commit 1" > file1.txt && git add file1.txt && git commit -m "Commit 1"
+echo "Commit 2" > file2.txt && git add file2.txt && git commit -m "Commit 2"
+echo "Commit 3" > file3.txt && git add file3.txt && git commit -m "Commit 3"
+```
+this will create three files file1.txt ,file2.txt ,file3.txt and will add to staging area and will commit
+```
+git rebase -i HEAD~3
+```
+this will help us to rewrite the last three commit in git branch 
+# Task 12: Cherry-Picking Commits
+```
+git checkout -b cherry-pick-example
+```
+this will create new branch and switch to it immediately
+```
+git cherry-pick <commit-hash>
+```
+this allow to copy the changes from specific commit in one branch and apply them as a new commit to your current branch.
+# Task 13: Tagging Commits
+```
+git tag -a v1.0 -m "Version 1.0 release"
+```
+This creates an annotated tag named v1.0 and associates it with the current commit, adding a message "Version 1.0 release."
+```
+git push origin v1.0
+```
+This pushes the tag v1.0 from your local Git repository to the remote repository (origin).
+# Task 14: Working with Remote Repositories
+```
+git remote add origin <repository-url>
+```
+this connects local git repository to remote repository on platform like github
+This pushes the commits in your local main branch to the remote repository's main branch on the remote named origin.
+# Task 15: Forking and Contributing
+```
+git clone <forked-repo-url>
+```
+this will clone the repo code to your local
+```
+git checkout -b fix-typo
+echo "Typo fixed" >> README.md
+git add README.md
+git commit -m "Fixed a typo"
+git push origin fix-typo
+```
+it will create new branch and switch to it immediately and will create file nd add it to stagging area then will commit it with given message  and will push it to github
+# Task 16: Simulate Team Collaboration
+
+# Task 17: Git Ignore
+```
+echo "node_modules/" > .gitignore
+```
+create new file if not present at current repo
+```
+git add .
+```
+add to stagging area
+
+
